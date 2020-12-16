@@ -749,15 +749,19 @@ Error message and password prompt
 
 <li>镜像网站</li>
 
+<li>强调</li>
+
+<li>提示</li>
+
 <li>添加路径到PATH环境变量</li>
 
 <li>维基关于页面</li>
 
+<li>信息</li>
+
 <li>引导页面</li>
 
 <li>在 Node.js 版本 TiddlyWiki 中安装插件</li>
-
-<li>这是一个临时条目</li>
 
 <li>直接嵌入条目</li>
 
@@ -16094,7 +16098,7 @@ wikilist-button-foreground: #000</pre>
 <div bag="default" created="20201116132346266" creator="D" modified="20201116132347706" modifier="D'y'xang" revision="1" title="$:/status/UserName">
 <pre>Dyxang</pre>
 </div>
-<div created="20201216064832286" creator="Dyxang" list="[[TiddlyWiki 宏]] $:/ControlPanel 引导页面" modified="20201216064940037" modifier="Dyxang" title="$:/StoryList">
+<div created="20201216144004871" creator="Dyxang" list="[[Git 仓库的相关操作]] 引导页面" modified="20201216144004871" modifier="Dyxang" title="$:/StoryList">
 <pre></pre>
 </div>
 <div bag="default" created="20150117152612000" modified="20161019072400497" revision="0" tags="$:/tags/Stylesheet" title="$:/styles/tw5.com/doc-styles" type="text/vnd.tiddlywiki">
@@ -20491,6 +20495,12 @@ select {
 
 * [[淘宝开源镜像|https://npm.taobao.org/mirrors]]</pre>
 </div>
+<div caption="强调" created="20201216070853152" creator="Dyxang" modified="20201216071041585" modifier="Dyxang" tags="$:/tags/TextEditor/Snippet" title="强调">
+<pre>&lt;&lt;.warning &quot;&quot;&gt;&gt;</pre>
+</div>
+<div caption="提示" created="20201216071045398" creator="Dyxang" modified="20201216071144774" modifier="Dyxang" tags="$:/tags/TextEditor/Snippet" title="提示">
+<pre>&lt;&lt;.tip &quot;&quot;&gt;&gt;</pre>
+</div>
 <div created="20201215024242916" creator="Dyxang" modified="20201215030143389" modifier="Dyxang" tags="Windows 碎片知识" title="添加路径到PATH环境变量">
 <pre>WIndows 10 下直接搜索“环境变量”，然后打开“编辑用户环境变量”或“编辑系统环境变量”，然后添加变量名为 PATH，值为运行文件所在路径。
 
@@ -20512,6 +20522,9 @@ select {
 &lt;&lt;&lt;
 本想直接推送到我博客所在的仓库，但是由于 [[Gridea]] 每次都貌似是强制推送，会把原有文件清空/覆盖
 &lt;&lt;&lt;</pre>
+</div>
+<div caption="信息" created="20201216071204149" creator="Dyxang" modified="20201216071224084" modifier="Dyxang" tags="$:/tags/TextEditor/Snippet" title="信息">
+<pre>&lt;&lt;.info &quot;&quot;&gt;&gt;</pre>
 </div>
 <div created="20201119024109126" creator="Dyxang" modified="20201206124624839" modifier="Dyxang" tags="维基系统 引导" title="引导页面">
 <pre>这是一个简单的引导页面，你进入的是我的知识库，存放一些碎片知识。
@@ -20539,12 +20552,6 @@ select {
 * [[Installing a plugin from the plugin library|https://tiddlywiki.com/#Installing%20a%20plugin%20from%20the%20plugin%20library]]
 * [[Installing custom plugins on Node.js|https://tiddlywiki.com/#Installing%20custom%20plugins%20on%20Node.js]]</pre>
 </div>
-<div created="20201121120323714" creator="Dyxang" modified="20201121120412213" modifier="Dyxang" tags="" title="这是一个临时条目">
-<pre>下次打算把维基语法读一遍，顺便贴一篇中文上来
-
----
-这是一个草稿，下次更新时会消失</pre>
-</div>
 <div created="20201121125839797" creator="Dyxang" modified="20201205042329615" modifier="Dyxang" tags="碎片知识 维基系统 语法" title="直接嵌入条目" type="text/vnd.tiddlywiki">
 <pre>即直接显示引用的条目，用法就是用`{{}}`包裹维基内条目，比如引导页面中的放大镜图标。
 
@@ -20558,8 +20565,11 @@ select {
 
 {{$:/core/images/advanced-search-button}}</pre>
 </div>
-<div created="20201121071824318" creator="Dyxang" modified="20201214081939833" modifier="Dyxang" tags="git 命令行" title="Git 仓库的相关操作">
+<div created="20201121071824318" creator="Dyxang" modified="20201216144601271" modifier="Dyxang" tags="git 命令行" title="Git 仓库的相关操作">
 <pre>!了解 Git
+
+&lt;&lt;.tip &quot;入门 GIt 的话推荐 [[Git 小白教程|https://rogerdudler.github.io/git-guide/index.zh.html]]&quot;&gt;&gt;
+
 !! 忽略文件
 ```sh
 cd D:/myrepo
@@ -20646,14 +20656,19 @@ git remote remove [origin]
 ```ps
 git push -f origin main
 ```
-!! 报错：
+
+!!一些报错
 
 * `fatal: remote origin already exists.`
 致命，远程来源已经存在。即本地库已经关联了origin的远程库，该警告出现在我要关联一个远程仓库时，此本地仓库之前关联过一个远程仓库，但是远程仓库已经删除了，而本地的配置依旧保留着，解决方法是直接删除`.git`文件夹或运行`git remote rm origin`，最后再重新执行`git remote add origin XXX`
 
 * `fatal: Not a git repository (or any of the parent directories): .git`
 
-字面意思，缺少 `.git` 文件，直接 `git init` 初始化就行</pre>
+字面意思，缺少 `.git` 文件，直接 `git init` 初始化就行
+
+!!其他信息
+
+* [[进阶内容|https://github.com/521xueweihan/git-tips]]</pre>
 </div>
 <div created="20201121075743302" creator="Dyxang" modified="20201121131957885" modifier="Dyxang" tags="git" title="Git 的相关操作">
 <pre>* 打开 Bash 时总是会在顶部显示 
@@ -20699,7 +20714,7 @@ cd E:/ffmpeg/
 
 [[微软官方 PowerShell 文档|https://docs.microsoft.com/zh-cn/powershell/]]</pre>
 </div>
-<div created="20160324005419793" creator="Dyxang" modified="20201216064952092" modifier="Dyxang" revision="0" tags="TiddlyWiki" title="TiddlyWiki 宏" type="text/vnd.tiddlywiki">
+<div created="20160324005419793" creator="Dyxang" modified="20201216070706845" modifier="Dyxang" revision="0" tags="TiddlyWiki" title="TiddlyWiki 宏" type="text/vnd.tiddlywiki">
 <pre>! TiddlyWiki 宏
 
 TiddlyWiki 的官方文档引入了一些文档宏，它们有助于表达。我把它的宏文件下载下来，放到了 `Dropbox/Journey/Wiki/tiddlers/system/` 中，分别是 `doc-macros.tid` 与 `doc-styles.tid` 文件。
@@ -20747,16 +20762,51 @@ TiddlyWiki 的官方文档引入了一些文档宏，它们有助于表达。我
 |!宏 |!用法 |
 |.preamble |区别于其他段落|
 
-&lt;&lt;.preamble &quot;&quot;&quot;这是一块开场白。&quot;&quot;&quot;&gt;&gt;</pre>
+&lt;&lt;.preamble &quot;&quot;&quot;这是一块开场白。&quot;&quot;&quot;&gt;&gt;
+
+!图标
+
+|advanced-search |&lt;&lt;.button &quot;advanced-search&quot;&gt;&gt; |
+|close-all |&lt;&lt;.button &quot;close-all&quot;&gt;&gt; |
+|control-panel |&lt;&lt;.button &quot;control-panel&quot;&gt;&gt; |
+|encryption |&lt;&lt;.button &quot;encryption&quot;&gt;&gt; |
+|export-page |&lt;&lt;.button &quot;export-page&quot;&gt;&gt; |
+|full-screen |&lt;&lt;.button &quot;full-screen&quot;&gt;&gt; |
+|home |&lt;&lt;.button &quot;home&quot;&gt;&gt; |
+|import |&lt;&lt;.button &quot;import&quot;&gt;&gt; |
+|language |&lt;&lt;.button &quot;language&quot;&gt;&gt; |
+|more-page-actions |&lt;&lt;.button &quot;more-page-actions&quot;&gt;&gt; |
+|new-journal |&lt;&lt;.button &quot;new-journal&quot;&gt;&gt; |
+|new-tiddler |&lt;&lt;.button &quot;new-tiddler&quot;&gt;&gt; |
+|permaview |&lt;&lt;.button &quot;permaview&quot;&gt;&gt; |
+|refresh |&lt;&lt;.button &quot;refresh&quot;&gt;&gt; |
+|save-wiki |&lt;&lt;.button &quot;save-wiki&quot;&gt;&gt; |
+|storyview |&lt;&lt;.button &quot;storyview&quot;&gt;&gt; |
+|tag-manager |&lt;&lt;.button &quot;tag-manager&quot;&gt;&gt; |
+|theme |&lt;&lt;.button &quot;theme&quot;&gt;&gt; |
+|.button |&lt;&lt;.button &quot;new-tiddler&quot;&gt;&gt; |
+|clone |&lt;&lt;.button &quot;clone&quot;&gt;&gt; |
+|close |&lt;&lt;.button &quot;close&quot;&gt;&gt; |
+|close-others |&lt;&lt;.button &quot;close-others&quot;&gt;&gt; |
+|edit |&lt;&lt;.button &quot;edit&quot;&gt;&gt; |
+|export-tiddler |&lt;&lt;.button &quot;export-tiddler&quot;&gt;&gt; |
+|info |&lt;&lt;.button &quot;info&quot;&gt;&gt; |
+|more-tiddler-actions |&lt;&lt;.button &quot;more-tiddler-actions&quot;&gt;&gt; |
+|new-here |&lt;&lt;.button &quot;new-here&quot;&gt;&gt; |
+|new-journal-here |&lt;&lt;.button &quot;new-journal-here&quot;&gt;&gt; |
+|permalink |&lt;&lt;.button &quot;permalink&quot;&gt;&gt; |
+|cancel |&lt;&lt;.button &quot;cancel&quot;&gt;&gt; |
+|delete |&lt;&lt;.button &quot;delete&quot;&gt;&gt; |
+|save |&lt;&lt;.button &quot;save&quot;&gt;&gt; |</pre>
 </div>
-<div created="20201116094405479" creator="Dyxang" modified="20201205042216165" modifier="Dyxang" tags="维基系统 扩展" title="Timimi——浏览器扩展">
+<div created="20201116094405479" creator="Dyxang" modified="20201216070141666" modifier="Dyxang" tags="维基系统 扩展" title="Timimi——浏览器扩展">
 <pre>Timimi 是一个浏览器扩展，允许用户保存独立的 tiddlywiki 文件——包括 TW5 和 TW-Classic。此外，Timimi 还提供了备份 tiddlywiki 文件到用户选择的路径的能力。
 
-Timimi 是一个跨浏览器的扩展，它使用了本地的消息API。它基本上意味着除了你从网络商店安装的浏览器插件外，用户还必须安装一个小的辅助程序。这也意味着 timimi 遵循现代浏览器插件的安全协议。timimi遵 循了现代浏览器附加组件的安全协议，它也允许扩展将大部分的重任转移到系统上，让浏览器变得轻巧和小巧。
+Timimi 还是一个跨浏览器的扩展，它使用了本地的消息API。它基本上意味着除了你从网络商店安装的浏览器插件外，用户还必须安装一个小的辅助程序。这也意味着 timimi 遵循现代浏览器插件的安全协议。timimi遵 循了现代浏览器附加组件的安全协议，它也允许扩展将大部分的重任转移到系统上，让浏览器变得轻巧和小巧。
 
 截至目前，timimi 是唯一一个可以让用户在你的文件系统中的任何地方编辑 tiddlywiki 文件的浏览器插件。
 
-详细内容请去 [[官网|https://ibnishak.github.io/Timimi/]] 查看</pre>
+&lt;&lt;.info &quot;详细内容请去 [[官网|https://ibnishak.github.io/Timimi/]] 查看&quot; &gt;&gt;</pre>
 </div>
 <div created="20201121105453930" creator="Dyxang" modified="20201121110257274" modifier="Dyxang" tags="[[VS code]] 工具" title="VS Code 的相关操作">
 <pre>!! 同时对多个相同字符的操作
